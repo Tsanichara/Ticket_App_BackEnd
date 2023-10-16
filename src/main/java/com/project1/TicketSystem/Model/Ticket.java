@@ -1,5 +1,6 @@
 package com.project1.TicketSystem.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +21,7 @@ public class Ticket {
 
     private Boolean resolved;
 
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_fk")
     private Users ticket_user;
